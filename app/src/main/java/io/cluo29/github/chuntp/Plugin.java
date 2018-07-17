@@ -77,9 +77,10 @@ public class Plugin extends Service
                 long offset = client.getClockOffset();
 
                 ContentValues time_data = new ContentValues();
+                Log.d("NTP","local= "+System.currentTimeMillis());
+                Log.d("NTP","ntp= "+ntpTime);
+                Log.d("NTP","offset= "+offset);
 
-                //Log.d("NTP","ntp= "+ntpTime);
-                //Log.d("NTP","offset= "+offset);
 
                 time_data.put(Time_Result.TIMESTAMP, System.currentTimeMillis());
                 time_data.put(Time_Result.DRIFT, offset);
